@@ -1,0 +1,71 @@
+<div class="login-wrapper">
+    <nz-tabset class="tab-wrapper">
+        <nz-tab nzTitle="登录">
+            <div class="form-group">
+                <form nz-form class="form">
+                    <nz-form-item>
+                        <nz-form-control>
+                            <input nz-input name="mobile" [(ngModel)]="loginInfo.mobile" type="text" id="mobile" placeholder="手机号码">
+                        </nz-form-control>
+                    </nz-form-item >
+                    <nz-form-item>
+                        <nz-form-control>
+                            <input nz-input name="password" [(ngModel)]="loginInfo.password" type="password" id="password" placeholder="密码">
+                        </nz-form-control>
+                    </nz-form-item >
+                    <nz-form-item>
+                        <nz-form-control>
+                            <div class="forget-password">
+                                <label name="remember" nz-checkbox [(ngModel)]="checked">记住密码</label>
+                                <a href="#">忘记密码?</a>
+                            </div>
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control>
+                            <button nz-button (click)="login()" nzType="primary">登录</button>
+                        </nz-form-control>
+                    </nz-form-item>
+                </form>
+            </div>
+        </nz-tab>
+        <nz-tab nzTitle="注册">
+            <div class="form-group">
+                <form nz-form class="form">
+                    <nz-form-item>
+                        <nz-form-control>
+                            <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+                                <input class="register-mobile-input" [(ngModel)]="registerInfo.mobile" nz-input name="mobile" type="text" id="mobile" placeholder="手机号码">
+                            </nz-input-group>
+                        </nz-form-control>
+                    </nz-form-item >
+                    <nz-form-item>
+                        <nz-form-control>
+                            <input nz-input name="verifyNum" [(ngModel)]="registerInfo.verifyNum" type="text" id="verifyNum" placeholder="验证码">
+                        </nz-form-control>
+                    </nz-form-item >
+                    <nz-form-item>
+                        <nz-form-control>
+                            <input nz-input name="password" [(ngModel)]="registerInfo.password" type="password" id="password" placeholder="密码">
+                        </nz-form-control>
+                    </nz-form-item >
+                    <nz-form-item>
+                        <nz-form-control>
+                            <input nz-input [(ngModel)]="registerInfo.confirmPassword" name="confirmPassword" type="password" id="confirmPassword" placeholder="再次输入密码">
+                        </nz-form-control>
+                    </nz-form-item >
+                    <nz-form-item>
+                        <nz-form-control>
+                            <button nz-button (click)="register()" nzType="primary">注册</button>
+                        </nz-form-control>
+                    </nz-form-item>
+                    <ng-template #suffixButton>
+                        <button class="verifyNum-button" (click)="sendVerifyCode()" nz-button nzType="primary" nzSize="large" nzSearch>发送验证码</button>
+                    </ng-template>
+                </form>
+            </div>
+        </nz-tab>
+      </nz-tabset>
+    <canvas id="canvas-bubble"></canvas>
+    <canvas id="canvas-wave"></canvas>
+</div>
